@@ -1,5 +1,18 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Address Book";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Texter.Models.Contact
+@using Texter.Models
+
+<h3>Add a new contact</h3>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+
+    @Html.LabelFor(model => model.Number)
+    @Html.TextBoxFor(model => model.Number)
+
+    <input type="submit" value="Add new contact" />
 }

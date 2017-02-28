@@ -6,6 +6,8 @@ using RestSharp;
 using RestSharp.Authenticators;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Texter.Models
 {
@@ -15,6 +17,7 @@ namespace Texter.Models
         public string From { get; set; } = "+1971-251-1057";
         public string Body { get; set; }
         public string Status { get; set; }
+        public int ContactId { get; set; }
 
         public static List<Message> GetMessages()
         {
@@ -53,5 +56,6 @@ namespace Texter.Models
             });
             return tcs.Task;
         }
+
     }
 }

@@ -1,11 +1,22 @@
 ﻿@model Texter.Models.Message
+@using Texter.Models
 
 <h2>Send a new message</h2>
 <hr />
 @using (Html.BeginForm())
 {
+    
+    @*@Html.TextBoxFor(model => model.To)*@
+
     @Html.LabelFor(model => model.To)
-    @Html.TextBoxFor(model => model.To)
+    @Html.DropDownList("To")
+    @*<select name="To">
+        @for()
+        {
+            <option value="Contact.Number">Contact.Name</option>
+
+        }
+    </select>*@
     @Html.LabelFor(model => model.Body)
     @Html.TextBoxFor(model => model.Body)
     <input type="submit" value="Send!" />
